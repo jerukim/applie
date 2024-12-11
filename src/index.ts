@@ -1,13 +1,12 @@
-import { initChromeProfile, initChromeDriver } from './util'
 import {
   BuiltInDriver,
   DatePosted,
   DeveloperEngineerSkills,
   DeveloperEngineerSubCategory,
   Experience,
-  Industry,
   JobCategory,
-} from './BuiltIn'
+} from "./BuiltIn"
+import { initChromeDriver, initChromeProfile } from "./util"
 
 async function main() {
   const profilePath = await initChromeProfile()
@@ -15,14 +14,14 @@ async function main() {
 
   try {
     const builtInDriver = new BuiltInDriver(driver)
-    // await builtInDriver.login()
+    await builtInDriver.login()
     await builtInDriver.goToJobsPage()
     await builtInDriver.setJobFilters({
       earlyApplicant: false,
       datePosted: DatePosted.PastWeek,
       jobCategory: JobCategory.DeveloperEngineer,
       jobSubCategory: [
-        DeveloperEngineerSubCategory['Front-End'],
+        DeveloperEngineerSubCategory["Front-End"],
         DeveloperEngineerSubCategory.Javascript,
       ],
       skills: [
