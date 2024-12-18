@@ -2,7 +2,8 @@
   "name": "applie",
   "module": "src/index.ts",
   "scripts": {
-    "dev": "bun --watch src/index.ts"
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
